@@ -15,7 +15,7 @@
 
 .App-header {
     width: 100%;
-    background-color: #282c34;
+    background-color: #6a1414;
     min-height: 40vh;
     display: flex;
     flex-direction: column;
@@ -23,6 +23,18 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
+}
+
+#rectangle {
+    width: 300px;
+    height: 100px;
+    background-color: red;
+}
+
+#rectangle2 {
+    width: 350px;
+    height: 120px;
+    background-color: red;
 }
 
 .App-link {
