@@ -5,7 +5,12 @@
  * the number twice.
  */
 export function bookEndList(numbers: number[]): number[] {
-    return numbers;
+    if (numbers.length == 0) {
+        return [];
+    } else if (numbers.length == 1) {
+        return [numbers[0], numbers[0]];
+    }
+    return [numbers[0], numbers[numbers.length - 1]];
 }
 
 /**
@@ -13,7 +18,8 @@ export function bookEndList(numbers: number[]): number[] {
  * number has been tripled (multiplied by 3).
  */
 export function tripleNumbers(numbers: number[]): number[] {
-    return numbers;
+    const new_array = numbers.map((price: number): number => price * 3);
+    return new_array;
 }
 
 /**
@@ -21,7 +27,7 @@ export function tripleNumbers(numbers: number[]): number[] {
  * the number cannot be parsed as an integer, convert it to 0 instead.
  */
 export function stringsToIntegers(numbers: string[]): number[] {
-    return [];
+    return numbers.map((word) => parseInt(word) || 0);
 }
 
 /**
@@ -32,7 +38,7 @@ export function stringsToIntegers(numbers: string[]): number[] {
  */
 // Remember, you can write functions as lambdas too! They work exactly the same.
 export const removeDollars = (amounts: string[]): number[] => {
-    return [];
+    return [0];
 };
 
 /**
@@ -41,15 +47,27 @@ export const removeDollars = (amounts: string[]): number[] => {
  * in question marks ("?").
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
-    return [];
+    const filtered = messages.filter((value) => !value.endsWith("?"));
+    const values = filtered.map((value: string): string => {
+        if (value.endsWith("!")) {
+            return value.toUpperCase();
+        }
+        return value;
+    });
+    return values;
 };
-
 /**
  * Consumes an array of words and returns the number of words that are LESS THAN
  * 4 letters long.
  */
 export function countShortWords(words: string[]): number {
-    return 0;
+    let sum = 0;
+    words.map((a_word): void => {
+        if (a_word.length < 4) {
+            sum += 1;
+        }
+    });
+    return sum;
 }
 
 /**
