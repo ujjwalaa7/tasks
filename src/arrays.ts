@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /**
  * Consume an array of numbers, and return a new array containing
  * JUST the first and last number. If there are no elements, return
@@ -38,7 +39,8 @@ export function stringsToIntegers(numbers: string[]): number[] {
  */
 // Remember, you can write functions as lambdas too! They work exactly the same.
 export const removeDollars = (amounts: string[]): number[] => {
-     return amounts.map((word) => {
+    //fixed indent
+    return amounts.map((word) => {
         const num = parseInt(word.replace("$", ""), 10);
         return isNaN(num) ? 0 : num;
     });
