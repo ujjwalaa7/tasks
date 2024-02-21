@@ -38,7 +38,10 @@ export function stringsToIntegers(numbers: string[]): number[] {
  */
 // Remember, you can write functions as lambdas too! They work exactly the same.
 export const removeDollars = (amounts: string[]): number[] => {
-    return [0];
+    return amounts.map((word) => {
+        const num = parseInt(word.replace("$", ""), 10);
+        return isNaN(num) ? 0 : num;
+    });
 };
 
 /**
@@ -76,7 +79,10 @@ export function countShortWords(words: string[]): number {
  * then return true.
  */
 export function allRGB(colors: string[]): boolean {
-    return false;
+    const valid = ["red", "blue", "green"];
+    return (
+        colors.length === 0 || colors.every((color) => valid.includes(color))
+    );
 }
 
 /**
@@ -87,7 +93,13 @@ export function allRGB(colors: string[]): boolean {
  * And the array [] would become "0=0".
  */
 export function makeMath(addends: number[]): string {
-    return "";
+    if (addends.length === 0) {
+        return "0=0";
+    }
+
+    const sum = addends.reduce((acc, curr) => acc + curr, 0);
+    const numbersString = addends.map(String).join("+");
+    return `${sum}=${numbersString}`;
 }
 
 /**
@@ -100,5 +112,24 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    let sum = 0;
+    let foundNegative = false;
+    const result: number[] = [];
+
+    values.map((num) => {
+        if (!foundNegative && num < 0) {
+            result.push(num);
+            result.push(sum);
+            foundNegative = true;
+        } else {
+            sum += num;
+            result.push(num);
+        }
+    });
+
+    if (!foundNegative) {
+        result.push(sum);
+    }
+
+    return result;
 }
