@@ -92,6 +92,7 @@ export function allRGB(colors: string[]): boolean {
  * For instance, the array [1, 2, 3] would become "6=1+2+3".
  * And the array [] would become "0=0".
  */
+//new comment to push
 export function makeMath(addends: number[]): string {
     if (addends.length === 0) {
         return "0=0";
