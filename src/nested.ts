@@ -36,13 +36,7 @@ export function findQuestion(
     questions: Question[],
     id: number
 ): Question | null {
-    const removed = questions.findLast(
-        (a_question: Question) => a_question.id === id
-    );
-    if (removed) {
-        return removed;
-    }
-    return null;
+    return questions.find((question) => question.id === id) || null;
 }
 
 /**
@@ -155,8 +149,6 @@ export function sameType(questions: Question[]): boolean {
     if (questions.length <= 1) {
         return true;
     }
-
-    // Check if every question has the same type as the first question
     return questions.every(
         (question, index) => index === 0 || question.type === questions[0].type
     );
