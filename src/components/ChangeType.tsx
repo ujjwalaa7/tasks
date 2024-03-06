@@ -3,28 +3,25 @@ import { Button } from "react-bootstrap";
 import { QuestionType } from "../interfaces/question";
 
 export function ChangeType(): JSX.Element {
-    const QuestionType = {
-        MULTIPLE_CHOICE: "multiple_choice_question",
-        SHORT_ANSWER: "short_answer_question"
-    };
-
-    const [questionType, setQuestionType] = useState(QuestionType.SHORT_ANSWER);
+    const [questionType, setQuestionType] = useState("short_answer_question"); // Directly use the string values instead of the object
 
     const handleChangeType = () => {
+        // Since we're directly using string values, we can directly compare
         setQuestionType(
-            questionType === QuestionType.MULTIPLE_CHOICE
-                ? QuestionType.SHORT_ANSWER
-                : QuestionType.MULTIPLE_CHOICE
+            questionType === "multiple_choice_question" // Use string values directly
+                ? "short_answer_question" // Use string values directly
+                : "multiple_choice_question" // Use string values directly
         );
     };
 
     return (
         <div>
             <Button onClick={handleChangeType}>Change Type</Button>
-            {questionType === QuestionType.MULTIPLE_CHOICE && (
+            {questionType === "multiple_choice_question" && ( // Use string values directly
                 <p>Multiple Choice</p>
             )}
-            {questionType === QuestionType.SHORT_ANSWER && <p>Short Answer</p>}
+            {questionType === "short_answer_question" && <p>Short Answer</p>}{" "}
+            {/* Use string values directly */}
         </div>
     );
 }
