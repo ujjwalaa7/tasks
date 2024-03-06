@@ -38,10 +38,10 @@ export function CycleHoliday(): JSX.Element {
     return (
         <div>
             <p>Holiday: {currHoliday}</p>
-            <button onClick={handleAdvanceAlphabetically}>
+            <Button onClick={handleAdvanceAlphabetically}>
                 Advance by Alphabet
-            </button>
-            <button onClick={handleAdvanceByYear}>Advance by Year</button>
+            </Button>
+            <Button onClick={handleAdvanceByYear}>Advance by Year</Button>
         </div>
     );
 }
