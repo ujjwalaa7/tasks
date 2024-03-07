@@ -9,6 +9,10 @@ import { StartAttempt } from "./components/StartAttempt";
 import { TwoDice } from "./components/TwoDice";
 import { CycleHoliday } from "./components/CycleHoliday";
 import { Counter } from "./components/Counter";
+import { ChooseTeam } from "./bad-components/ChooseTeam";
+import { ColoredBox } from "./bad-components/ColoredBox";
+import { ShoveBox } from "./bad-components/ShoveBox";
+import { DoubleHalf } from "./bad-components/DoubleHalf";
 
 function App(): JSX.Element {
     return (
@@ -56,6 +60,10 @@ function App(): JSX.Element {
             <ChangeType></ChangeType>
             <hr />
             <CycleHoliday></CycleHoliday>
+            <ChooseTeam></ChooseTeam>
+            <ColoredBox></ColoredBox>
+            <ShoveBox></ShoveBox>
+            <DoubleHalf></DoubleHalf>
             upstream/task-state
         </div>
     );
