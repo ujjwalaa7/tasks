@@ -9,13 +9,18 @@ import { StartAttempt } from "./components/StartAttempt";
 import { TwoDice } from "./components/TwoDice";
 import { CycleHoliday } from "./components/CycleHoliday";
 import { Counter } from "./components/Counter";
+
+import { DoubleHalf } from "./bad-components/DoubleHalf";
+import { ColoredBox } from "./bad-components/ColoredBox";
+import { ShoveBox } from "./bad-components/ShoveBox";
+import { ChooseTeam } from "./bad-components/ChooseTeam";
+
 function App(): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
                 UD CISC275 with React Hooks and TypeScript
             </header>
-            HEAD
             <h1>Software Development Task 3</h1>
             <img
                 src="https://i.pinimg.com/564x/23/c2/e0/23c2e029107dae85d9601439cf3ffd04.jpg"
@@ -44,6 +49,14 @@ function App(): JSX.Element {
                 automatically reload. - Hello World ujjwala pothula
             </p>
             <hr></hr>
+            <DoubleHalf></DoubleHalf>
+            <hr></hr>
+            <ChooseTeam></ChooseTeam>
+            <hr></hr>
+            <ColoredBox></ColoredBox>
+            <hr></hr>
+            <ShoveBox></ShoveBox>
+            <hr></hr>
             <Counter></Counter>
             <hr />
             <RevealAnswer></RevealAnswer>
@@ -55,7 +68,6 @@ function App(): JSX.Element {
             <ChangeType></ChangeType>
             <hr />
             <CycleHoliday></CycleHoliday>
-            upstream/task-state
         </div>
     );
 }
